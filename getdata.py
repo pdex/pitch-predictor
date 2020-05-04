@@ -7,9 +7,6 @@ from bz2 import open
 from tqdm.notebook import tqdm
 
 
-games_dir = lambda y : "data/games-%d" % y
-
-
 class Fetcher(object):
   def __init__(self, base_dir):
     self.base_dir = base_dir
@@ -63,13 +60,13 @@ class Fetcher(object):
     game_ids = sorted(set([x['game_id'] for x in schedule]))
 
     for game_id in tqdm(game_ids):
-      fetch_game(year, game_id)
+      self.fetch_game(year, game_id)
     print("DONE.")
 
   def fetch_year(self, year):
     self.create_directories(year)
-    schedule = fetch_schedule(year)
-    fetch_games(year, schedule)
+    schedule = self.fetch_schedule(year)
+    self.fetch_games(year, schedule)
 
 
 data_years = [2016,2017,2018,2019]
