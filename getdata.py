@@ -17,8 +17,8 @@ class Fetcher(object):
   def schedule_filename(self, year):
     return os.path.join(self.base_dir, "data", "schedule-p4-%d.pkl.bz2" % year)
 
-	def game_filename(self, year, game_id):
-		return os.path.join(self.base_dir, "data", "games-%d", "id-%d-p4.pkl.bz2" % (year, game_id)
+  def game_filename(self, year, game_id):
+    return os.path.join(self.base_dir, "data", "games-%d" % year, "id-%d-p4.pkl.bz2" % game_id)
 
   def create_directories(self, year):
     games_dir = os.path.join("data", "games-%d" % year)
