@@ -1,0 +1,2 @@
+MLB-StatsAPI
+tqdm==4.45.0
