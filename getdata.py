@@ -4,7 +4,7 @@ import os
 from os.path import exists
 from os import makedirs
 from bz2 import open
-from tqdm.notebook import tqdm
+from tqdm.auto import tqdm
 
 
 class Fetcher(object):
@@ -67,8 +67,3 @@ class Fetcher(object):
     self.create_directories(year)
     schedule = self.fetch_schedule(year)
     self.fetch_games(year, schedule)
-
-
-data_years = [2016,2017,2018,2019]
-
-
