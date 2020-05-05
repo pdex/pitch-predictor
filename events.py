@@ -82,7 +82,7 @@ class EventsLoader(object):
   def load_years(self, years, ignore_cache=False):
     valid_years = []
     all_events = []
-    for year in shuffled_years:
+    for year in years:
       events = load_year(year, ignore_cache)
       all_events.extend(events)
       valid_years.append(str(year))
