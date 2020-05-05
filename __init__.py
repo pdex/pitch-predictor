@@ -1,8 +1,8 @@
-from events import EventsLoader
-from events import XPlayEvent
-from events import XPitchEvent
-from getdata import Fetcher
-from parser import GameParser
+from pitchpredictor.events import EventsLoader
+from pitchpredictor.events import XPlayEvent
+from pitchpredictor.events import XPitchEvent
+from pitchpredictor.getdata import Fetcher
+from pitchpredictor.parser import GameParser
 import random
 
 
