@@ -1,4 +1,5 @@
 import os
+from tqdm.auto import tqdm
 # define event classes
 
 
