@@ -6,9 +6,8 @@ from __init__ import GameParser
 from __init__ import setup_parameters
 
 
-def main():
+def main(base_dir):
   data_years = [2016,2017,2018,2019]
-  base_dir = "./tmp"
   fetcher = Fetcher(base_dir)
   for year in data_years:
     fetcher.fetch_year(year)
@@ -18,4 +17,5 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+  base_dir = "./tmp"
+  main(base_dir)
