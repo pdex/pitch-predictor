@@ -1,4 +1,6 @@
 import os
+import pickle
+from bz2 import open
 from tqdm.auto import tqdm
 # define event classes
 
