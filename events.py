@@ -43,6 +43,9 @@ class EventsLoader(object):
     self.base_dir = base_dir
     self.game_parser = game_parser
 
+  def games_dir(self, year):
+    return os.path.join(self.base_dir, "data", "games-%d" % year)
+
   def events_filename(self, year):
     return os.path.join(self.base_dir, "data", "events-%d.pkl.bz2" % year)
 
@@ -54,7 +57,7 @@ class EventsLoader(object):
       with open(filename, "rb") as infile:
         events = pickle.load(infile)
     else:
-      data_dir = games_dir(year)
+      data_dir = self.games_dir(year)
       if os.path.exists(data_dir):
         games = {}
         print("File (" + data_dir + ") found.",flush=True)
