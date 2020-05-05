@@ -83,7 +83,7 @@ class EventsLoader(object):
     valid_years = []
     all_events = []
     for year in years:
-      events = load_year(year, ignore_cache)
+      events = self.load_year(year, ignore_cache)
       all_events.extend(events)
       valid_years.append(str(year))
       print("year(%d): %d events loaded" % (year, len(events)))
