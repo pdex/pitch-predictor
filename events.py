@@ -78,7 +78,7 @@ class EventsLoader(object):
           except:
             os.remove(os.path.join(data_dir, entry))
         for game in games.values():
-          events.extend(parse(game))
+          events.extend(self.game_parser(game))
         with open(filename, "wb") as outfile:
           pickle.dump(events, outfile, protocol=4)
         print("DONE")
